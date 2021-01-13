@@ -68,9 +68,9 @@ public class MainActivity extends AppCompatActivity {
         bestSellerProductList.add(new BestSellerProduct(3, R.drawable.best3));
         bestSellerProductList.add(new BestSellerProduct(4, R.drawable.best4));
         bestSellerProductList.add(new BestSellerProduct(5, R.drawable.best5));
-        bestSellerProductList.add(new BestSellerProduct(6, R.drawable.best6));
-        bestSellerProductList.add(new BestSellerProduct(7, R.drawable.best7));
-        bestSellerProductList.add(new BestSellerProduct(8, R.drawable.best8));
+        bestSellerProductList.add(new BestSellerProduct(5, R.drawable.best6));
+        bestSellerProductList.add(new BestSellerProduct(5, R.drawable.best7));
+        bestSellerProductList.add(new BestSellerProduct(5, R.drawable.best8));
 
         //adding data to model
         categoryList = new ArrayList<>();
