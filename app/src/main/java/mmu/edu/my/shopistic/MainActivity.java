@@ -1,18 +1,32 @@
 package mmu.edu.my.shopistic;
 
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.app.Activity;
+import android.content.ContentResolver;
+import android.content.DialogInterface;
 import android.content.Intent;
-import android.graphics.drawable.Drawable;
+import android.net.Uri;
 import android.os.Bundle;
+import android.provider.MediaStore;
+import android.util.Log;
 import android.view.View;
+import android.webkit.MimeTypeMap;
+import android.widget.Button;
+import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
+import android.content.Intent;
+import android.graphics.drawable.Drawable;
 
-import android.os.Bundle;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -33,7 +47,6 @@ public class MainActivity extends AppCompatActivity {
     RecyclerView bestsellerRecyclerView, categoryRecyclerView, recentlyViewedRecycler;
     BestSellerProductAdapter bestSellerProductAdapter;
     List<BestSellerProduct> bestSellerProductList;
-
     CategoryAdapter categoryAdapter;
     List<Category> categoryList;
 
@@ -47,6 +60,16 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        logout = findViewById(R.id.logout);
+        logout.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                FirebaseAuth.getInstance().signOut();
+                startActivity(new Intent(getApplicationContext(), LoginActivity.class));
+                finish();
+            }
+        });
+
         bestsellerRecyclerView = findViewById(R.id.bestsellerRecycler);
         categoryRecyclerView = findViewById(R.id.categoryRecycler);
         allCategory = findViewById(R.id.allCategoryImage);
@@ -59,7 +82,6 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(i);
             }
         });
-
 
         //adding data to model
         bestSellerProductList = new ArrayList<>();
@@ -87,7 +109,6 @@ public class MainActivity extends AppCompatActivity {
         recentlyViewedList.add(new RecentlyViewed("Vans Old Skool","Lightweight, stylish and comfortable. Between old school trends and modern style!","RM 344,07","-","Black and White", R.drawable.card3, R.drawable.d3));
         recentlyViewedList.add(new RecentlyViewed("Midi Collared Dress"," Pretty & Comfortable to use! using premium materials.","RM 43,01","All Size","Milo Brown", R.drawable.card4, R.drawable.d4));
         recentlyViewedList.add(new RecentlyViewed("Face Shield","Protects mask and face from direct splatter. May prolong mask life.","RM 2,87"," ","Transparant", R.drawable.card5, R.drawable.d5));
-
 
         setBestSellerRecycler(bestSellerProductList);
         setCategoryRecycler(categoryList);
