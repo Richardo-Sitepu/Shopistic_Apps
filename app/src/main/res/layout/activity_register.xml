@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_marginLeft="10dp"
+    android:layout_marginRight="10dp"
+    android:background="#F6ECF8"
+    android:gravity="center"
+    android:orientation="vertical"
+    tools:context=".RegisterActivity">
+
+    <TextView
+        android:id="@+id/textTitleReg"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/amaranth_bold"
+        android:text="WELCOME TO"
+        android:textAppearance="@style/TextAppearance.AppCompat.Large"
+        android:textColor="#5A2FA8"
+        android:textColorHint="#FFFFFF"
+        android:textSize="24sp" />
+
+    <ImageView
+        android:id="@+id/imageLogoReg"
+        android:layout_width="120dp"
+        android:layout_height="120dp"
+        android:foregroundGravity="bottom"
+        app:srcCompat="@drawable/shopistic" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="30dp"
+        android:fontFamily="@font/amaranth_bold"
+        android:text="REGISTER"
+        android:textColor="#932EA5"
+        android:textSize="20sp"
+        android:textStyle="bold" />
+
+    <EditText
+        android:id="@+id/txUsernameReg"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="10dp"
+        android:fontFamily="@font/amaranth"
+        android:hint="Username"
+        android:inputType="textPersonName"
+        android:textColor="#932EA5" />
+
+    <EditText
+        android:id="@+id/txPasswordReg"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="10dp"
+        android:fontFamily="@font/amaranth"
+        android:hint="Password"
+        android:inputType="textPassword"
+        android:textColor="#932EA5" />
+
+    <EditText
+        android:id="@+id/txConPassword"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="10dp"
+        android:fontFamily="@font/amaranth"
+        android:hint="Confirm Password"
+        android:inputType="textPassword"
+        android:textColor="#932EA5" />
+
+    <Button
+        android:id="@+id/btnRegister"
+        style="@style/Widget.AppCompat.Button.Colored"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="10dp"
+        android:fontFamily="@font/amaranth"
+        android:text="REGISTER"
+        android:textColor="@color/white" />
+
+    <TextView
+        android:id="@+id/tvRegister"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="30dp"
+        android:fontFamily="@font/amaranth"
+        android:text="Back to Login"
+        android:textColor="#932EA5" />
+
+
+</LinearLayout>

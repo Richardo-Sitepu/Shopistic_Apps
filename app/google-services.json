@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "907879058020",
+    "project_id": "shopistic-27179",
+    "storage_bucket": "shopistic-27179.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:907879058020:android:7feeadbb6f60455db0ad71",
+        "android_client_info": {
+          "package_name": "mmu.edu.my.shopistic"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "907879058020-ba5t2ln1veik765u530r3rgf6t5ekv89.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDjdYt-48AtT98bUKFYjpAl4XrWMicLmT8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "907879058020-ba5t2ln1veik765u530r3rgf6t5ekv89.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
