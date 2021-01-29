@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">SHOPISTIC</string>
+    <string name="transaction_note">Transaction note</string>
+    <string name="pay_now">Pay Now</string>
+    <string name="name">Name</string>
+    <string name="wadaw">wadaw</string>
+</resources>
