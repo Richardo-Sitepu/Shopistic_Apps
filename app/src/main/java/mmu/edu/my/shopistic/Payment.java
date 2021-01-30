@@ -39,11 +39,7 @@ public class Payment extends AppCompatActivity {
         pay = findViewById(R.id.pay);
 
 
-        //initialising default value
-        name.setText("RAJENDRA SINGH BISHT");
-        upiId.setText("7409484009@kotak");
-        note.setText("donation");
-        amount.setText("10");
+        
 
         pay.setOnClickListener(new View.OnClickListener() {
             @Override
