@@ -46,9 +46,6 @@ public class CameraActivity extends AppCompatActivity {
     String currentPhotoPath;
     StorageReference storageReference;
 
-
-
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -76,7 +73,6 @@ public class CameraActivity extends AppCompatActivity {
             }
         });
 
-
         back.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -85,7 +81,6 @@ public class CameraActivity extends AppCompatActivity {
                 finish();
             }
         });
-
     }
 
     private void askCameraPermissions() {
@@ -94,7 +89,6 @@ public class CameraActivity extends AppCompatActivity {
         }else {
             dispatchTakePictureIntent();
         }
-
     }
 
     @Override
@@ -107,8 +101,6 @@ public class CameraActivity extends AppCompatActivity {
             }
         }
     }
-
-
 
     @Override
     protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
@@ -125,10 +117,7 @@ public class CameraActivity extends AppCompatActivity {
                 this.sendBroadcast(mediaScanIntent);
 
                 uploadImageToFirebase(f.getName(), contentUri);
-
-
             }
-
         }
 
         if (requestCode == GALLERY_REQUEST_CODE) {
@@ -140,13 +129,8 @@ public class CameraActivity extends AppCompatActivity {
                 selectedImage.setImageURI(contentUri);
 
                 uploadImageToFirebase(imageFileName, contentUri);
-
-
             }
-
         }
-
-
     }
 
     private void uploadImageToFirebase(String name, Uri contentUri) {
@@ -169,17 +153,13 @@ public class CameraActivity extends AppCompatActivity {
                 Toast.makeText(CameraActivity.this, "Upload Failled.", Toast.LENGTH_SHORT).show();
             }
         });
-
     }
-
-
 
     private String getFileExt(Uri contentUri) {
         ContentResolver c = getContentResolver();
         MimeTypeMap mime = MimeTypeMap.getSingleton();
         return mime.getExtensionFromMimeType(c.getType(contentUri));
     }
-
 
     private File createImageFile() throws IOException {
         // Create an image file name
@@ -197,7 +177,6 @@ public class CameraActivity extends AppCompatActivity {
         currentPhotoPath = image.getAbsolutePath();
         return image;
     }
-
 
     private void dispatchTakePictureIntent() {
         Intent takePictureIntent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);

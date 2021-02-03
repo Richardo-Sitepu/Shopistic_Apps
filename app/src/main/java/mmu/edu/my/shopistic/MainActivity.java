@@ -14,7 +14,6 @@ import android.widget.TextView;
 import java.util.ArrayList;
 import java.util.List;
 
-
 import mmu.edu.my.shopistic.adapter.BestSellerProductAdapter;
 import mmu.edu.my.shopistic.adapter.CategoryAdapter;
 import mmu.edu.my.shopistic.adapter.RecentlyViewedAdapter;
