@@ -75,6 +75,7 @@
         android:layout_marginBottom="30dp"
         android:fontFamily="@font/amaranth"
         android:text="Create Account"
+        android:textStyle="bold"
         android:textColor="#932EA5" />
 
 

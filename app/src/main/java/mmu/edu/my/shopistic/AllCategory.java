@@ -3,7 +3,6 @@ package mmu.edu.my.shopistic;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.DefaultItemAnimator;
 import androidx.recyclerview.widget.GridLayoutManager;
-import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Intent;
@@ -65,6 +64,7 @@ public class AllCategory extends AppCompatActivity {
         allCategoryAdapter = new AllCategoryAdapter(this, allcategoryModelList);
         AllCategoryRecycler.setAdapter(allCategoryAdapter);
     }
+
 
     public class GridSpacingItemDecoration extends RecyclerView.ItemDecoration {
 
