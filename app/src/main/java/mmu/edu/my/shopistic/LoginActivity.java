@@ -61,8 +61,9 @@ public class LoginActivity extends AppCompatActivity {
                     progressBar.setVisibility(View.VISIBLE);
                     Boolean res = dbHelper.checkUser(username, password);
                     if (res == true) {
-                        Toast.makeText(LoginActivity.this, "Login Successfull", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(LoginActivity.this, "Login Successful", Toast.LENGTH_SHORT).show();
                         startActivity(new Intent(LoginActivity.this, MainActivity.class));
+                        finish();
                     }else {
                         Toast.makeText(LoginActivity.this, "Login Failed", Toast.LENGTH_SHORT).show();
                         showErrorDialog();
