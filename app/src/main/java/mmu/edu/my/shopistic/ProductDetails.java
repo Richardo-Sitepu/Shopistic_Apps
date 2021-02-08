@@ -26,7 +26,7 @@ public class ProductDetails extends AppCompatActivity {
         name = i.getStringExtra("name");
         price = i.getStringExtra("price");
         desc = i.getStringExtra("description");
-        image = i.getIntExtra("image", R.drawable.d1);
+        image = i.getIntExtra("image", R.drawable.h1);
         size = i.getStringExtra("size");
         colour = i.getStringExtra("colour");
 

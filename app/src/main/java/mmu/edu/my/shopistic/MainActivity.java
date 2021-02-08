@@ -1,20 +1,18 @@
 package mmu.edu.my.shopistic;
 
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Intent;
-import android.net.Uri;
+import android.media.Image;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.ListIterator;
-
 
 import mmu.edu.my.shopistic.adapter.BestSellerProductAdapter;
 import mmu.edu.my.shopistic.adapter.CategoryAdapter;
@@ -22,8 +20,6 @@ import mmu.edu.my.shopistic.adapter.RecentlyViewedAdapter;
 import mmu.edu.my.shopistic.model.BestSellerProduct;
 import mmu.edu.my.shopistic.model.Category;
 import mmu.edu.my.shopistic.model.RecentlyViewed;
-
-import mmu.edu.my.shopistic.R.drawable.*;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -37,6 +33,7 @@ public class MainActivity extends AppCompatActivity {
     List<RecentlyViewed> recentlyViewedList;
 
     TextView allCategory;
+    ImageView camera;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -47,11 +44,20 @@ public class MainActivity extends AppCompatActivity {
         categoryRecyclerView = findViewById(R.id.categoryRecycler);
         allCategory = findViewById(R.id.allCategoryImage);
         recentlyViewedRecycler = findViewById(R.id.recently_item);
+        camera = findViewById(R.id.camView);
 
         allCategory.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent i = new Intent(MainActivity.this, AllCategory.class);
+                startActivity(i);
+            }
+        });
+
+        camera.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i = new Intent(MainActivity.this, CameraActivity.class);
                 startActivity(i);
             }
         });
@@ -77,17 +83,18 @@ public class MainActivity extends AppCompatActivity {
 
         //adding data to model
         recentlyViewedList = new ArrayList<>();
-        recentlyViewedList.add(new RecentlyViewed("Dettol Hand Sanitizer","Instant Hand Sanitizer kills 99.9% of germs without water. Great hygiene solution for whole family.","RM 24,37","500ml","", R.drawable.card1, R.drawable.d1));
-        recentlyViewedList.add(new RecentlyViewed("Casio Baby-G Watch","Casio Baby-G Bluetooth Step Tracker BSA-B100MF-1A Original.","RM 430,09"," ","Black and Pink", R.drawable.card2, R.drawable.d2));
-        recentlyViewedList.add(new RecentlyViewed("Vans Old Skool","Lightweight, stylish and comfortable. Between old school trends and modern style!","RM 344,07","-","Black and White", R.drawable.card3, R.drawable.d3));
-        recentlyViewedList.add(new RecentlyViewed("Midi Collared Dress"," Pretty & Comfortable to use! using premium materials.","RM 43,01","All Size","Milo Brown", R.drawable.card4, R.drawable.d4));
-        recentlyViewedList.add(new RecentlyViewed("Face Shield","Protects mask and face from direct splatter. May prolong mask life.","RM 2,87"," ","Transparant", R.drawable.card5, R.drawable.d5));
+        recentlyViewedList.add(new RecentlyViewed("Dettol Hand Sanitizer","Instant Hand Sanitizer kills 99.9% of germs without water. Great hygiene solution for whole family.","RM 24.37","500ml","", R.drawable.card1, R.drawable.h1));
+        recentlyViewedList.add(new RecentlyViewed("Casio Baby-G Watch","Casio Baby-G Bluetooth Step Tracker BSA-B100MF-1A Original.","RM 430.09"," ","Black and Pink", R.drawable.card2, R.drawable.w1));
+        recentlyViewedList.add(new RecentlyViewed("Vans Old Skool","Lightweight, stylish and comfortable. Between old school trends and modern style!","RM 344.07","-","Black and White", R.drawable.card3, R.drawable.s1));
+        recentlyViewedList.add(new RecentlyViewed("Midi Collared Dress"," Pretty & Comfortable to use! using premium materials.","RM 43.01","All Size","Milo Brown", R.drawable.card4, R.drawable.c1));
+        recentlyViewedList.add(new RecentlyViewed("Face Shield","Protects mask and face from direct splatter. May prolong mask life.","RM 2.87"," ","Transparant", R.drawable.card5, R.drawable.h2));
 
         setBestSellerRecycler(bestSellerProductList);
         setCategoryRecycler(categoryList);
         setRecentlyViewedRecycler(recentlyViewedList);
 
     }
+
 
     private void setBestSellerRecycler(List<BestSellerProduct> dataList) {
         RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false);
