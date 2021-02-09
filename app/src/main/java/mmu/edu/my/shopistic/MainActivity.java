@@ -8,6 +8,7 @@ import android.content.Intent;
 import android.media.Image;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -33,7 +34,7 @@ public class MainActivity extends AppCompatActivity {
     List<RecentlyViewed> recentlyViewedList;
 
     TextView allCategory;
-    ImageView camera;
+    ImageView camera, cart;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -45,6 +46,7 @@ public class MainActivity extends AppCompatActivity {
         allCategory = findViewById(R.id.allCategoryImage);
         recentlyViewedRecycler = findViewById(R.id.recently_item);
         camera = findViewById(R.id.camView);
+        cart = findViewById(R.id.cartView);
 
         allCategory.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -58,6 +60,14 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent i = new Intent(MainActivity.this, CameraActivity.class);
+                startActivity(i);
+            }
+        });
+
+        cart.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i = new Intent(MainActivity.this, AddCart.class);
                 startActivity(i);
             }
         });
@@ -83,10 +93,10 @@ public class MainActivity extends AppCompatActivity {
 
         //adding data to model
         recentlyViewedList = new ArrayList<>();
-        recentlyViewedList.add(new RecentlyViewed("Dettol Hand Sanitizer","Instant Hand Sanitizer kills 99.9% of germs without water. Great hygiene solution for whole family.","RM 24.37","500ml","", R.drawable.card1, R.drawable.h1));
+        recentlyViewedList.add(new RecentlyViewed("Dettol Hand Sanitizer","Instant Hand Sanitizer kills 99.9% of germs without water.","RM 24.37","500ml","", R.drawable.card1, R.drawable.h1));
         recentlyViewedList.add(new RecentlyViewed("Casio Baby-G Watch","Casio Baby-G Bluetooth Step Tracker BSA-B100MF-1A Original.","RM 430.09"," ","Black and Pink", R.drawable.card2, R.drawable.w1));
         recentlyViewedList.add(new RecentlyViewed("Vans Old Skool","Lightweight, stylish and comfortable. Between old school trends and modern style!","RM 344.07","-","Black and White", R.drawable.card3, R.drawable.s1));
-        recentlyViewedList.add(new RecentlyViewed("Midi Collared Dress"," Pretty & Comfortable to use! using premium materials.","RM 43.01","All Size","Milo Brown", R.drawable.card4, R.drawable.c1));
+        recentlyViewedList.add(new RecentlyViewed("Midi Collared Dress"," Pretty & Comfortable!","RM 43.01","All Size","Milo Brown", R.drawable.card4, R.drawable.c1));
         recentlyViewedList.add(new RecentlyViewed("Face Shield","Protects mask and face from direct splatter. May prolong mask life.","RM 2.87"," ","Transparant", R.drawable.card5, R.drawable.h2));
 
         setBestSellerRecycler(bestSellerProductList);
