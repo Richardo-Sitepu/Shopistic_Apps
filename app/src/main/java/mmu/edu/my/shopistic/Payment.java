@@ -11,6 +11,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -19,6 +20,7 @@ public class Payment extends AppCompatActivity {
     public static final String GPAY_PACKAGE_NAME = "com.google.android.apps.nbu.paisa.user";
     EditText name, upiId, amount, note;
     TextView msg, proPrice;
+    ImageView back;
     Button pay;
     Uri uri;
     String approvalRefNo, price;
@@ -29,6 +31,17 @@ public class Payment extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_payment);
+
+        back = findViewById(R.id.back4);
+
+        back.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent back = new Intent(Payment.this, ProductDetails.class);
+                startActivity(back);
+                finish();
+            }
+        });
 
         Intent i = getIntent();
         price = i.getStringExtra("price");

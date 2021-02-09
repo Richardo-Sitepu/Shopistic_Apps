@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#F6ECF8"
     tools:context=".Payment">
 
     <LinearLayout
@@ -12,7 +13,17 @@
         android:orientation="vertical">
 
         <ImageView
-            android:id="@+id/imageView7"
+            android:id="@+id/back4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/ic_arrow_back_black_24" />
+
+        <ImageView
+            android:id="@+id/cartProd"
             android:layout_width="match_parent"
             android:layout_height="88dp"
             app:srcCompat="@drawable/ic_gpay" />

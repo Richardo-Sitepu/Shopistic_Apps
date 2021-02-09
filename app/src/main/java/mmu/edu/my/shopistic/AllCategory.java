@@ -45,6 +45,7 @@ public class AllCategory extends AppCompatActivity {
             }
         });
 
+
         //adding data to model
         allCategoryModelList = new ArrayList<>();
         allCategoryModelList.add(new AllCategoryModel(1, R.drawable.ic_home_cloth));
