@@ -109,7 +109,7 @@ public class CameraActivity extends AppCompatActivity {
             if (resultCode == Activity.RESULT_OK) {
                 File f = new File(currentPhotoPath);
                 selectedImage.setImageURI(Uri.fromFile(f));
-                Log.d("tag", "ABsolute Url of Image is " + Uri.fromFile(f));
+                Log.d("tag", "Absolute Url of Image is " + Uri.fromFile(f));
 
                 Intent mediaScanIntent = new Intent(Intent.ACTION_MEDIA_SCANNER_SCAN_FILE);
                 Uri contentUri = Uri.fromFile(f);
@@ -150,7 +150,7 @@ public class CameraActivity extends AppCompatActivity {
         }).addOnFailureListener(new OnFailureListener() {
             @Override
             public void onFailure(@NonNull Exception e) {
-                Toast.makeText(CameraActivity.this, "Upload Failled.", Toast.LENGTH_SHORT).show();
+                Toast.makeText(CameraActivity.this, "Upload Failed.", Toast.LENGTH_SHORT).show();
             }
         });
     }
@@ -187,7 +187,7 @@ public class CameraActivity extends AppCompatActivity {
             try {
                 photoFile = createImageFile();
             } catch (IOException ex) {
-
+                Log.d("IOException", "Exception occurred when dispatchTakePictureIntent" + ex.toString());
             }
             // Continue only if the File was successfully created
             if (photoFile != null) {
