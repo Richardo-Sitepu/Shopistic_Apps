@@ -6,6 +6,7 @@
     <uses-permission android:name="android.permission.CAMERA" />
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
 
     <application
         android:allowBackup="true"
@@ -14,16 +15,22 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.SHOPISTIC">
+        <meta-data
+            android:name="com.google.android.geo.API_KEY"
+            android:value="@string/google_maps_key" />
+
+        <activity android:name=".MapActivity" android:label="@string/title_activity_maps"></activity>
         <activity android:name=".AddCart"></activity>
-        <activity android:name=".SoldActivity" />
-        <activity android:name=".ListProduct" />
-        <activity android:name=".Payment" />
-        <activity android:name=".RegisterActivity" />
-        <activity android:name=".ProductDetails" />
-        <activity android:name=".AllCategory" />
-        <activity android:name=".MainActivity" />
-        <activity android:name=".CameraActivity" />
+<!--        <activity android:name=".SoldActivity" />-->
+<!--        <activity android:name=".ListProduct" />-->
+        <activity android:name=".Payment"></activity>
+        <activity android:name=".RegisterActivity" ></activity>
+        <activity android:name=".ProductDetails" ></activity>
+        <activity android:name=".AllCategory" ></activity>
+        <activity android:name=".MainActivity" ></activity>
+        <activity android:name=".CameraActivity" ></activity>
         <activity android:name=".LoginActivity">
+
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

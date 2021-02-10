@@ -20,11 +20,10 @@ public class Payment extends AppCompatActivity {
     public static final String GPAY_PACKAGE_NAME = "com.google.android.apps.nbu.paisa.user";
     EditText name, upiId, amount, note;
     TextView msg, proPrice;
-    ImageView back;
+    ImageView back, map;
     Button pay;
     Uri uri;
     String approvalRefNo, price;
-
     public static String payerName, UpiId, msgNote, sendAmount, status;
 
     @Override
@@ -58,9 +57,19 @@ public class Payment extends AppCompatActivity {
         msg = findViewById(R.id.status);
         pay = findViewById(R.id.pay);
 
+        map = findViewById(R.id.map);
+
 
         //initialising default value
         proPrice.setText(price);
+
+        map.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i = new Intent(Payment.this, MapActivity.class);
+                startActivity(i);
+            }
+        });
 
         pay.setOnClickListener(new View.OnClickListener() {
             @Override
